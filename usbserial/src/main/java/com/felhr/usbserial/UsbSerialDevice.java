@@ -4,6 +4,7 @@ import com.felhr.deviceids.CH34xIds;
 import com.felhr.deviceids.CP210xIds;
 import com.felhr.deviceids.FTDISioIds;
 import com.felhr.deviceids.PL2303Ids;
+import com.felhr.deviceids.PL2303GIds;
 
 import android.annotation.TargetApi;
 import android.hardware.usb.UsbConstants;
@@ -79,6 +80,8 @@ public abstract class UsbSerialDevice implements UsbSerialInterface
             return new CP2102SerialDevice(device, connection, iface);
         else if(PL2303Ids.isDeviceSupported(vid, pid))
             return new PL2303SerialDevice(device, connection, iface);
+        else if(PL2303GIds.isDeviceSupported(vid, pid))
+            return new PL2303GSerialDevice(device, connection, iface);
         else if(CH34xIds.isDeviceSupported(vid, pid))
             return new CH34xSerialDevice(device, connection, iface);
         else if(isCdcDevice(device))
@@ -113,6 +116,8 @@ public abstract class UsbSerialDevice implements UsbSerialInterface
         else if(CP210xIds.isDeviceSupported(vid, pid))
             return true;
         else if(PL2303Ids.isDeviceSupported(vid, pid))
+            return true;
+        else if(PL2303GIds.isDeviceSupported(vid, pid))
             return true;
         else if(CH34xIds.isDeviceSupported(vid, pid))
             return true;
