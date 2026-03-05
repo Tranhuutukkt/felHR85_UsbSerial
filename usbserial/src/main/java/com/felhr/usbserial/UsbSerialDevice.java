@@ -4,6 +4,7 @@ import com.felhr.deviceids.CH34xIds;
 import com.felhr.deviceids.CP210xIds;
 import com.felhr.deviceids.FTDISioIds;
 import com.felhr.deviceids.PL2303Ids;
+import com.felhr.deviceids.PL2303GIds;
 
 import android.annotation.TargetApi;
 import android.hardware.usb.UsbConstants;
